@@ -1,0 +1,11 @@
+[servers]
+#alpha.example.org
+#beta.example.org
+#192.168.174.136 ansible_user=gns3
+svr1 ansible_user=gns3
+svr2 ansible_user=gns3
+svr3 ansible_user=gns3
+svr4 ansible_user=gns3
+#toolbox7 ansible_user=gns3
+#toolbox8 ansible_user=gns3
+#toolbox9 ansible_user=root

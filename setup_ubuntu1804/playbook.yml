@@ -4,9 +4,12 @@
 ---
 - hosts: all
   become: true
+  vars:
+    ansible_become_pass: gns3
+
   vars_files:
     - vars/default.yml
-
+  
   tasks:
     - name: Install Prerequisites
       apt: name=aptitude update_cache=yes state=latest force_apt_get=yes
@@ -56,13 +59,13 @@
       apt: name={{ sys_packages }} state=latest
 
 # UFW Setup
-    - name: UFW - Allow SSH connections
-      ufw:
-        rule: allow
-        name: OpenSSH
-
-    - name: UFW - Deny all other incoming traffic by default
-      ufw:
-        state: enabled
-        policy: deny
-        direction: incoming
+#    - name: UFW - Allow SSH connections
+#      ufw:
+#        rule: allow
+#        name: OpenSSH
+#
+#    - name: UFW - Deny all other incoming traffic by default
+#      ufw:
+#        state: enabled
+#        policy: deny
+#        direction: incoming
